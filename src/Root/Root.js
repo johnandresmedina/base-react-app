@@ -1,23 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import Layout from '../Layout';
 import App from '../App';
 import About from '../About';
 
 const Root = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-          </ul>
-        </nav>
+      <Layout>
         <Switch>
           <Route exact path='/'>
             <App />
@@ -26,7 +17,7 @@ const Root = () => {
             <About />
           </Route>
         </Switch>
-      </div>
+      </Layout>
     </Router>
   );
 };
