@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
                   <DropdownItem>Home</DropdownItem>
                 </Link>
                 <Link to='/about'>
-                  <DropdownItem>Courses</DropdownItem>
+                  <DropdownItem>About</DropdownItem>
                 </Link>
               </DropdownMenu>
             </UncontrolledDropdown>
