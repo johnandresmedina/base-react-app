@@ -1,25 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import Layout from '../Layout';
-import App from '../App';
-import About from '../About';
-
-const Root = () => {
-  return (
-    <Router>
-      <Layout>
-        <Switch>
-          <Route exact path='/'>
-            <App />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-        </Switch>
-      </Layout>
-    </Router>
-  );
-};
-
-export default Root;
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./Root.prod');
+} else {
+  module.exports = require('./Root.dev');
+}
