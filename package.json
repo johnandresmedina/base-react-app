@@ -17,8 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage",
-    "prettier:check": "prettier --check \"src/**/*.{js,json,scss,md}\"",
-    "prettier": "prettier --write \"src/**/*.{js,json,scss,md}\" ",
+    "prettier:check": "prettier --check \"src/**/*.{js,jsx,json,ts,tsx,scss,md}\"",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,json,ts,tsx,scss,md}\" ",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -48,7 +48,31 @@
     "redux-logger": "^3.0.6"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jsx-a11y"
+    ],
+    "ignorePatterns": [
+      "serviceWorker.js"
+    ],
+    "rules": {
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "react/sort-prop-types": 2
+    }
   },
   "prettier": {
     "printWidth": 120,
@@ -68,10 +92,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,ts,tsx}": "eslint",
+    "src/**/*.{js,jsx,json,ts,tsx,scss,md}": "prettier --write"
   },
   "browserslist": {
     "production": [
