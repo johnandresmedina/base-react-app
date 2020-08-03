@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Layout from '../Layout';
-import App from '../App';
-import About from '../About';
+import Layout from '../layout';
+import App from '../app';
+import About from '../about';
 
 const Routes = () => {
   return (

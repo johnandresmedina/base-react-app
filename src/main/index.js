@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
-import Routes from '../Routes';
+import Routes from './Routes';
 
-const Root = ({ store }) => {
+const Main = ({ store }) => {
   return (
     <Provider store={store}>
       <Routes />
@@ -12,8 +12,8 @@ const Root = ({ store }) => {
   );
 };
 
-Root.propTypes = {
+Main.propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-export default Root;
+export default Main;
