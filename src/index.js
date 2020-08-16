@@ -1,16 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './index.scss';
+import 'fontsource-roboto';
 
 import React from 'react';
 import { render } from 'react-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import * as serviceWorker from './serviceWorker';
-
-import configureAppStore from '../src/store/configureStore';
 import Main from './main';
+import theme from './theme';
 
-const store = configureAppStore();
-render(<Main store={store} />, document.getElementById('root'));
+render(
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Main />
+  </ThemeProvider>,
+
+  document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

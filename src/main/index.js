@@ -1,19 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
+import configureAppStore from '../store/configureStore';
 import Routes from './Routes';
 
-const Main = ({ store }) => {
+const Main = () => {
+  const store = configureAppStore();
+
   return (
     <Provider store={store}>
       <Routes />
     </Provider>
   );
-};
-
-Main.propTypes = {
-  store: PropTypes.object.isRequired,
 };
 
 export default Main;
